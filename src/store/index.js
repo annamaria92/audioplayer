@@ -11,11 +11,15 @@ export const store = new Vuex.Store({
       "Beatles - Yesterday",
       "Queen - I Want To Break Free",
     ],
+    play: false,
   },
   getters: {
   	AUDIOTRACKS: state => {
   	  return state.audiotracks;
-  	},
+    },
+    PLAY: state => {
+  	  return state.play;
+    },
   },
   mutations: {},
   actions: {},
