@@ -5,6 +5,15 @@
         {{item}}
       </li>      
     </ul>
+    
+    <button>воспроизведение</button>
+    <button>пауза</button>
+    <button>следующий</button>
+    <button>предыдущий</button>
+    <!-- найти трек -->
+    <!-- выбрать конкретную временную метку песни -->
+    <!-- отрегулировать громкость -->
+
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
