@@ -46,6 +46,7 @@ export default {
     },
     play: function () {
       console.log('play')
+      this.$store.commit('SET_PLAY', true);
     },
   },
   mounted() {

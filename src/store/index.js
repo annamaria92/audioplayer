@@ -21,6 +21,10 @@ export const store = new Vuex.Store({
   	  return state.play;
     },
   },
-  mutations: {},
+  mutations: {
+    SET_PLAY: (state, payload) => {
+      state.play = payload;
+    },
+  },
   actions: {},
 });
