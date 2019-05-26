@@ -12,7 +12,12 @@
     >
       воспроизведение
     </button>
-    <button v-if="this.isPlaying">пауза</button>
+    <button
+      v-if="this.isPlaying"
+      v-on:click="stop"
+    >
+      пауза
+    </button>
     <button>следующий</button>
     <button>предыдущий</button>
     <!-- найти трек -->
@@ -47,6 +52,10 @@ export default {
     play: function () {
       console.log('play')
       this.$store.commit('SET_PLAY', true);
+    },
+    stop: function () {
+      console.log('stop')
+      this.$store.commit('SET_PLAY', false);
     },
   },
   mounted() {
