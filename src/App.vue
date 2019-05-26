@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <ul>
-      <li v-bind:key="item" v-for="item in this.audioTracks">
-        {{item}}
+      <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
+        {{ visibleIndex(index) }} : {{item}}
       </li>      
     </ul>
     
@@ -31,6 +31,11 @@ export default {
     audioTracks() {
       return this.$store.getters.AUDIOTRACKS;
     },
+  },
+  methods: {
+    visibleIndex: function (index) {
+      return index+1
+    }
   },
   mounted() {
     console.log(this.audioTracks);
