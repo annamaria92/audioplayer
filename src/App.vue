@@ -6,8 +6,8 @@
       </li>      
     </ul>
     
-    <button>воспроизведение</button>
-    <button>пауза</button>
+    <button v-if="!this.isPlaying">воспроизведение</button>
+    <button v-if="this.isPlaying">пауза</button>
     <button>следующий</button>
     <button>предыдущий</button>
     <!-- найти трек -->
@@ -30,6 +30,9 @@ export default {
   computed: {
     audioTracks() {
       return this.$store.getters.AUDIOTRACKS;
+    },
+    isPlaying() {
+      return this.$store.getters.PLAY;
     },
   },
   methods: {
