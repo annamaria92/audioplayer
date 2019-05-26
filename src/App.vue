@@ -80,8 +80,13 @@ export default {
       this.$store.dispatch('SET_CURRENTAUDIO', index);
     },
     choose: function (index) {
-      console.log('choose: ', index);
-      this.$store.dispatch('SET_CURRENTAUDIO', index);
+      if (index === this.currentaudioIndex) {
+        console.log('play/stop');
+        this.$store.dispatch('SET_PLAY', !this.isPlaying);
+      } else {
+        console.log('choose: ', index);
+        this.$store.dispatch('SET_CURRENTAUDIO', index);
+      }
     },
   },
   mounted() {
