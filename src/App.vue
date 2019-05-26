@@ -6,7 +6,12 @@
       </li>      
     </ul>
     
-    <button v-if="!this.isPlaying">воспроизведение</button>
+    <button
+      v-if="!this.isPlaying"
+      v-on:click="play"
+    >
+      воспроизведение
+    </button>
     <button v-if="this.isPlaying">пауза</button>
     <button>следующий</button>
     <button>предыдущий</button>
@@ -38,7 +43,10 @@ export default {
   methods: {
     visibleIndex: function (index) {
       return index+1
-    }
+    },
+    play: function () {
+      console.log('play')
+    },
   },
   mounted() {
     console.log(this.audioTracks);
