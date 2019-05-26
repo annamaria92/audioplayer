@@ -54,15 +54,15 @@ export default {
       return index+1
     },
     play: function () {
-      console.log('play')
+      console.log('play');
       this.$store.dispatch('SET_PLAY', true);
     },
     stop: function () {
-      console.log('stop')
+      console.log('stop');
       this.$store.dispatch('SET_PLAY', false);
     },
     next: function () {
-      console.log('next')
+      console.log('next');
       let index = this.currentaudioIndex + 1;
       if (index > this.audioTracks.length) {
         index = 0;
@@ -70,7 +70,7 @@ export default {
       this.$store.dispatch('SET_CURRENTAUDIO', index);
     },
     prev: function () {
-      console.log('prev')
+      console.log('prev');
       let index = this.currentaudioIndex - 1;
       if (index < 0) {
         index = this.audioTracks.length - 1;
