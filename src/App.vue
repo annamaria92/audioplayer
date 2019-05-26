@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <ul>
-      <li>Frank Sinatra - Love and Marriage</li>
-      <li>Astrud Gilberto - The Girl From Ipanema</li>
-      <li>Beatles - Yesterday</li>
-      <li>Queen - I Want To Break Free</li>
+      <li v-bind:key="item" v-for="item in this.audioTracks">
+        {{item}}
+      </li>      
     </ul>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
