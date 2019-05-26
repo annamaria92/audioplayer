@@ -2,6 +2,7 @@
   <div id="app">
     <ul>
       <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
+        <span v-if="currentaudioIndex === index"> + </span>
         {{ visibleIndex(index) }} : {{item}}
       </li>      
     </ul>
@@ -44,6 +45,9 @@ export default {
     isPlaying() {
       return this.$store.getters.PLAY;
     },
+    currentaudioIndex() {
+      return this.$store.getters.CURRENTAUDIO;
+    }
   },
   methods: {
     visibleIndex: function (index) {
