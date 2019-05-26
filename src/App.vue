@@ -2,8 +2,10 @@
   <div id="app">
     <ul>
       <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
-        <span v-if="currentaudioIndex === index"> + </span>
-        {{ visibleIndex(index) }} : {{item}}
+        <div v-on:click="choose(index)">
+          <span v-if="currentaudioIndex === index"> + </span>
+          {{ visibleIndex(index) }} : {{item}}
+        </div>
       </li>      
     </ul>
     
@@ -75,6 +77,10 @@ export default {
       if (index < 0) {
         index = this.audioTracks.length - 1;
       }
+      this.$store.dispatch('SET_CURRENTAUDIO', index);
+    },
+    choose: function (index) {
+      console.log('choose: ', index);
       this.$store.dispatch('SET_CURRENTAUDIO', index);
     },
   },
