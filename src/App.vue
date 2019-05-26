@@ -63,11 +63,11 @@ export default {
     },
     next: function () {
       console.log('next')
-      // this.$store.dispatch('SET_NEXT');
+      this.$store.dispatch('SET_CURRENTAUDIO', 1);
     },
     prev: function () {
       console.log('prev')
-      // this.$store.dispatch('SET_PREV');
+      this.$store.dispatch('SET_CURRENTAUDIO', 2);
     },
   },
   mounted() {

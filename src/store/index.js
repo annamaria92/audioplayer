@@ -29,10 +29,16 @@ export const store = new Vuex.Store({
     SET_PLAY: (state, payload) => {
       state.play = payload;
     },
+    SET_CURRENTAUDIO: (state, payload) => {
+      state.currentaudio = payload;
+    },
   },
   actions: {
     SET_PLAY: (context, payload) => {
       context.commit('SET_PLAY', payload);
+    },
+    SET_CURRENTAUDIO: (context, payload) => {
+      context.commit('SET_CURRENTAUDIO', payload);
     },
   },
 });
