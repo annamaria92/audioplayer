@@ -26,5 +26,9 @@ export const store = new Vuex.Store({
       state.play = payload;
     },
   },
-  actions: {},
+  actions: {
+    SET_PLAY: (context, payload) => {
+      context.commit('SET_PLAY', payload);
+    },
+  },
 });

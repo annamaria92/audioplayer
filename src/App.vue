@@ -51,11 +51,11 @@ export default {
     },
     play: function () {
       console.log('play')
-      this.$store.commit('SET_PLAY', true);
+      this.$store.dispatch('SET_PLAY', true);
     },
     stop: function () {
       console.log('stop')
-      this.$store.commit('SET_PLAY', false);
+      this.$store.dispatch('SET_PLAY', false);
     },
   },
   mounted() {
