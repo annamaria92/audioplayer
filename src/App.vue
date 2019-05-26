@@ -63,11 +63,19 @@ export default {
     },
     next: function () {
       console.log('next')
-      this.$store.dispatch('SET_CURRENTAUDIO', 1);
+      let index = this.currentaudioIndex + 1;
+      if (index > this.audioTracks.length) {
+        index = 0;
+      }
+      this.$store.dispatch('SET_CURRENTAUDIO', index);
     },
     prev: function () {
       console.log('prev')
-      this.$store.dispatch('SET_CURRENTAUDIO', 2);
+      let index = this.currentaudioIndex - 1;
+      if (index < 0) {
+        index = this.audioTracks.length - 1;
+      }
+      this.$store.dispatch('SET_CURRENTAUDIO', index);
     },
   },
   mounted() {
