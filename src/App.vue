@@ -64,7 +64,7 @@ export default {
     next: function () {
       console.log('next');
       let index = this.currentaudioIndex + 1;
-      if (index > this.audioTracks.length) {
+      if (index > this.audioTracks.length - 1) {
         index = 0;
       }
       this.$store.dispatch('SET_CURRENTAUDIO', index);
