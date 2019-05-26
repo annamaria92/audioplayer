@@ -19,8 +19,8 @@
     >
       пауза
     </button>
-    <button>следующий</button>
-    <button>предыдущий</button>
+    <button v-on:click="next">следующий</button>
+    <button v-on:click="prev">предыдущий</button>
     <!-- найти трек -->
     <!-- выбрать конкретную временную метку песни -->
     <!-- отрегулировать громкость -->
@@ -60,6 +60,14 @@ export default {
     stop: function () {
       console.log('stop')
       this.$store.dispatch('SET_PLAY', false);
+    },
+    next: function () {
+      console.log('next')
+      // this.$store.dispatch('SET_NEXT');
+    },
+    prev: function () {
+      console.log('prev')
+      // this.$store.dispatch('SET_PREV');
     },
   },
   mounted() {
