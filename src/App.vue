@@ -19,8 +19,8 @@
     >
       пауза
     </button>
-    <button v-on:click="next">следующий</button>
-    <button v-on:click="prev">предыдущий</button>
+    <button v-on:click="prev">←предыдущий</button>
+    <button v-on:click="next">следующий→</button>
     <!-- найти трек -->
     <!-- выбрать конкретную временную метку песни -->
     <!-- отрегулировать громкость -->
