@@ -1,5 +1,9 @@
 # audioplayer
 
+Освоение Vuex — с нуля до героя: https://habr.com/ru/post/421551/
+
+Standard Tooling for Vue.js Development: https://cli.vuejs.org/
+
 ## Project setup
 ```
 npm install
