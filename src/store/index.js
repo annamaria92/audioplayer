@@ -4,8 +4,19 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-  state: {},
-  getters: {},
+  state: {
+  	audiotracks: [
+      "Frank Sinatra - Love and Marriage",
+      "Astrud Gilberto - The Girl From Ipanema",
+      "Beatles - Yesterday",
+      "Queen - I Want To Break Free",
+    ],
+  },
+  getters: {
+  	AUDIOTRACKS: state => {
+  	  return state.audiotracks;
+  	},
+  },
   mutations: {},
   actions: {},
 });

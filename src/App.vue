@@ -18,6 +18,14 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  computed: {
+    audioTracks() {
+      return this.$store.getters.AUDIOTRACKS;
+    },
+  },
+  mounted() {
+    console.log(this.audioTracks);
   }
 }
 </script>
