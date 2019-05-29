@@ -3,8 +3,15 @@
     <ul>
       <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
         <div v-on:click="choose(index)">
-          <span v-if="currentaudioIndex === index"> + </span>
-          {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
+          <p>
+            <span v-if="currentaudioIndex === index"> + </span>
+            {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
+          </p>
+          <p> 
+            <small>
+              Audio: {{musicServer + item.fileName}}
+            </small>
+          </p>
         </div>
       </li>      
     </ul>
@@ -41,6 +48,9 @@ export default {
     // HelloWorld
   },
   computed: {
+    musicServer() {
+      return this.$store.getters.MUSICSERVER;
+    },
     audioTracks() {
       return this.$store.getters.AUDIOTRACKS;
     },
