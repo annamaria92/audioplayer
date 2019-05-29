@@ -7,11 +7,6 @@
             <span v-if="currentaudioIndex === index"> + </span>
             {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
           </p>
-          <p> 
-            <small>
-              Audio: {{musicServer + item.fileName}}
-            </small>            
-          </p>
           <p>
             <audio controls>
               <source :src="musicServer + item.fileName" type="audio/mpeg">
