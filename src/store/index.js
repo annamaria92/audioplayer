@@ -6,10 +6,22 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     audiotracks: [
-      "Frank Sinatra - Love and Marriage",
-      "Astrud Gilberto - The Girl From Ipanema",
-      "Beatles - Yesterday",
-      "Queen - I Want To Break Free",
+      {
+        singer: "Frank Sinatra",
+        song: "Love and Marriage",
+      },
+      {
+        singer: "Astrud Gilberto",
+        song: "The Girl From Ipanema",
+      },
+      {
+        singer: "Beatles",
+        song: "Yesterday",
+      },
+      {
+        singer: "Queen",
+        song: "I Want To Break Free",
+      },
     ],
     currentaudio: 0,
     play: false,
