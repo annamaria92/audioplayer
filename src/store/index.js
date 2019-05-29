@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
+    musicserver: "http://annamaria92.ru/music/",
     audiotracks: [
       {
         singer: "Frank Sinatra",
@@ -31,6 +32,9 @@ export const store = new Vuex.Store({
     play: false,
   },
   getters: {
+    MUSICSERVER: state => {
+      return state.musicserver;
+    },
     AUDIOTRACKS: state => {
       return state.audiotracks;
     },
