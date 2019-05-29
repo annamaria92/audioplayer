@@ -1,21 +1,22 @@
 <template>
   <v-app id="app">
-    <ul>
-      <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
-        <div v-on:click="choose(index)">
-          <p>
+    <v-list>        
+      <v-list-tile
+        v-for="(item, index) in this.audioTracks"
+        :key="index"
+      >
+        <v-list-tile-content v-on:click="choose(index)">
+          <v-list-tile-title>
             <span v-if="currentaudioIndex === index"> + </span>
             {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
-          </p>
-          <p>
-            <audio controls>
-              <source :src="musicServer + item.fileName" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </p>
-        </div>
-      </li>      
-    </ul>
+          </v-list-tile-title>
+          <!-- <audio controls>
+            <source :src="musicServer + item.fileName" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio> -->
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
     <div>
       <p>
         Current audio: {{ musicServer + audioTracks[currentaudioIndex].fileName }}
