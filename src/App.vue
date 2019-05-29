@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <ul>
       <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
         <div v-on:click="choose(index)">
@@ -18,12 +18,10 @@
     </ul>
     <div>
       <div>
-        <v-app>
-          <v-btn color="success">Success</v-btn>
-          <v-btn color="error">Error</v-btn>
-          <v-btn color="warning">Warning</v-btn>
-          <v-btn color="info">Info</v-btn>
-        </v-app>
+        <v-btn color="success">Success</v-btn>
+        <v-btn color="error">Error</v-btn>
+        <v-btn color="warning">Warning</v-btn>
+        <v-btn color="info">Info</v-btn>
       </div>
       <p>
         Current audio: {{ musicServer + audioTracks[currentaudioIndex].fileName }}
@@ -50,7 +48,7 @@
 
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  </div>
+  </v-app>
 </template>
 
 <script>
