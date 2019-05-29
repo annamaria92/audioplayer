@@ -5,9 +5,9 @@ import {store} from './store';
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.config.productionTip = false
+Vue.use(Vuetify);
 
 new Vue({
   store,
-  Vuetify,
   render: h => h(App),
 }).$mount('#app')
