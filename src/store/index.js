@@ -9,18 +9,22 @@ export const store = new Vuex.Store({
       {
         singer: "Frank Sinatra",
         song: "Love and Marriage",
+        fileName: "Frank_Sinatra-Love_and_Marriage.mp3",
       },
       {
         singer: "Astrud Gilberto",
         song: "The Girl From Ipanema",
+        fileName: "Stan_Gets_and_Astrud_Gilberto-Girl_from_Ipanema.mp3",
       },
       {
         singer: "Beatles",
         song: "Yesterday",
+        fileName: "Beatles-Yesterday.mp3",
       },
       {
         singer: "Queen",
         song: "I Want To Break Free",
+        fileName: "Queen-I_Want_To_Break_Free.mp3",
       },
     ],
     currentaudio: 0,
