@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-  	audiotracks: [
+    audiotracks: [
       "Frank Sinatra - Love and Marriage",
       "Astrud Gilberto - The Girl From Ipanema",
       "Beatles - Yesterday",
@@ -15,14 +15,14 @@ export const store = new Vuex.Store({
     play: false,
   },
   getters: {
-  	AUDIOTRACKS: state => {
-  	  return state.audiotracks;
+    AUDIOTRACKS: state => {
+      return state.audiotracks;
     },
     CURRENTAUDIO: state => {
-  	  return state.currentaudio;
+      return state.currentaudio;
     },
     PLAY: state => {
-  	  return state.play;
+      return state.play;
     },
   },
   mutations: {
