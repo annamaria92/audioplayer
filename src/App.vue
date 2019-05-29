@@ -17,31 +17,29 @@
       </li>      
     </ul>
     <div>
-      <div>
-        <v-btn color="success">Success</v-btn>
-        <v-btn color="error">Error</v-btn>
-        <v-btn color="warning">Warning</v-btn>
-        <v-btn color="info">Info</v-btn>
-      </div>
       <p>
         Current audio: {{ musicServer + audioTracks[currentaudioIndex].fileName }}
       </p>      
     </div>
       
-    <button
-      v-if="!this.isPlaying"
-      v-on:click="play"
-    >
-      воспроизведение
-    </button>
-    <button
-      v-if="this.isPlaying"
-      v-on:click="stop"
-    >
-      пауза
-    </button>
-    <button v-on:click="prev">←предыдущий</button>
-    <button v-on:click="next">следующий→</button>
+    <div>
+      <v-btn
+        color="success"
+        v-if="!this.isPlaying"
+        v-on:click="play"
+      >
+        воспроизведение
+      </v-btn>
+      <v-btn
+        color="error"
+        v-if="this.isPlaying"
+        v-on:click="stop"
+      >
+        пауза
+      </v-btn>
+      <v-btn color="info" v-on:click="prev">←предыдущий</v-btn>
+      <v-btn color="info" v-on:click="next">следующий→</v-btn>
+    </div>
     <!-- найти трек -->
     <!-- выбрать конкретную временную метку песни -->
     <!-- отрегулировать громкость -->
