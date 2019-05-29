@@ -4,7 +4,7 @@
       <li v-bind:key="index" v-for="(item, index) in this.audioTracks">
         <div v-on:click="choose(index)">
           <span v-if="currentaudioIndex === index"> + </span>
-          {{ visibleIndex(index) }} : {{item}}
+          {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
         </div>
       </li>      
     </ul>
