@@ -4,6 +4,8 @@
 
 Standard Tooling for Vue.js Development: https://cli.vuejs.org/
 
+Material Design Component Framework -https://vuetifyjs.com/en/getting-started/quick-start
+
 ## Project setup
 ```
 npm install
