@@ -21,7 +21,12 @@
         </div>
       </li>      
     </ul>
-    
+    <div>
+      <p>
+        Current audio: {{ musicServer + audioTracks[currentaudioIndex].fileName }}
+      </p>      
+    </div>
+      
     <button
       v-if="!this.isPlaying"
       v-on:click="play"
