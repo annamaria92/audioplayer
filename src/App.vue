@@ -10,7 +10,13 @@
           <p> 
             <small>
               Audio: {{musicServer + item.fileName}}
-            </small>
+            </small>            
+          </p>
+          <p>
+            <audio controls>
+              <source :src="musicServer + item.fileName" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </p>
         </div>
       </li>      
