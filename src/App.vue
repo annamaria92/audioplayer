@@ -41,8 +41,6 @@
       <v-btn color="info" v-on:click="next">следующий→</v-btn>
     </div>
     <!-- найти трек -->
-    <!-- выбрать конкретную временную метку песни -->
-    <!-- отрегулировать громкость -->
 
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
