@@ -46,10 +46,14 @@ export default {
     },
     onPlaying: function() {
       this.$emit('playing', true);
+    },
+    onPause: function() {
+      this.$emit('pause', true);
     }
   },
   mounted() {
     this.$refs.audioElem.onplaying = this.onPlaying;
+    this.$refs.audioElem.onpause = this.onPause;
     this.initAudio();
   },
   beforeUpdate() {
