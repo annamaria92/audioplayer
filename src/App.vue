@@ -24,6 +24,7 @@
               :song="audioTracks[currentaudioIndex].song"
               :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
               :isPlaying="this.isPlaying"
+              v-on:playing="play"
             />
           </div>
       

@@ -45,7 +45,7 @@ export default {
       }
     },
     onPlaying: function() {
-      console.log('onPlaying');
+      this.$emit('playing', true);
     }
   },
   mounted() {
