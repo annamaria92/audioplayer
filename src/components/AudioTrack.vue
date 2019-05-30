@@ -43,9 +43,13 @@ export default {
       } else {
         this.$refs.audioElem.pause(); 
       }
+    },
+    onPlaying: function() {
+      console.log('onPlaying');
     }
   },
   mounted() {
+    this.$refs.audioElem.onplaying = this.onPlaying;
     this.initAudio();
   },
   beforeUpdate() {
