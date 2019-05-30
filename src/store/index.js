@@ -12,24 +12,28 @@ export const store = new Vuex.Store({
         song: "Love and Marriage",
         fileName: "Frank_Sinatra-Love_and_Marriage.mp3",
         volume: 1,
+        time: 0,
       },
       {
         singer: "Astrud Gilberto",
         song: "The Girl From Ipanema",
         fileName: "Stan_Gets_and_Astrud_Gilberto-Girl_from_Ipanema.mp3",
         volume: 1,
+        time: 0,
       },
       {
         singer: "Beatles",
         song: "Yesterday",
         fileName: "Beatles-Yesterday.mp3",
         volume: 1,
+        time: 0,
       },
       {
         singer: "Queen",
         song: "I Want To Break Free",
         fileName: "Queen-I_Want_To_Break_Free.mp3",
         volume: 1,
+        time: 0,
       },
     ],
     currentaudio: 0,
@@ -59,6 +63,9 @@ export const store = new Vuex.Store({
     SET_VOLUME: (state, payload) => {
       state.audiotracks[state.currentaudio].volume = payload;
     },
+    SET_CURRENT_TIME: (state, payload) => {
+      state.audiotracks[state.currentaudio].time = payload;
+    },
   },
   actions: {
     SET_PLAY: (context, payload) => {
@@ -69,6 +76,9 @@ export const store = new Vuex.Store({
     },
     SET_VOLUME: (context, payload) => {
       context.commit('SET_VOLUME', payload);
+    },
+    SET_CURRENT_TIME: (context, payload) => {
+      context.commit('SET_CURRENT_TIME', payload);
     },
   },
 });

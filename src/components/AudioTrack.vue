@@ -27,7 +27,8 @@ export default {
     song: String,
     fileName: String,
     isPlaying: Boolean,
-    volume: Number
+    volume: Number,
+    currentTime: Number,
   },
   methods: {
     initAudio: function() {
@@ -46,6 +47,7 @@ export default {
       }
       
       this.$refs.audioElem.volume = this.volume;
+      this.$refs.audioElem.currentTime = this.currentTime;
     },
     onPlaying: function() {
       this.$emit('playing', true);
@@ -56,11 +58,16 @@ export default {
     onVolumeChange: function() {
       this.$emit('volume-change', this.$refs.audioElem.volume);
     },
+    onTimeUpdate: function() {
+      console.log('onTimeUpdate', this.$refs.audioElem.currentTime);
+      this.$emit('time-update', this.$refs.audioElem.currentTime);
+    },
   },
   mounted() {
     this.$refs.audioElem.onplaying = this.onPlaying;
     this.$refs.audioElem.onpause = this.onPause;
-    this.$refs.audioElem.onvolumechange = this.onVolumeChange;
+    this.$refs.audioElem.onvolumechange = this.onVolumeChange; 
+    this.$refs.audioElem.ontimeupdate = this.onTimeUpdate;
     this.initAudio();
   },
   beforeUpdate() {

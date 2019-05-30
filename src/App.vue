@@ -24,10 +24,12 @@
               :song="audioTracks[currentaudioIndex].song"
               :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
               :volume="audioTracks[currentaudioIndex].volume"
+              :currentTime="audioTracks[currentaudioIndex].time"
               :isPlaying="this.isPlaying"
               v-on:playing="play"
               v-on:pause="stop"
               v-on:volume-change="volumeChange"
+              v-on:time-update="timeUpdate"
             />
           </div>
       
@@ -116,6 +118,9 @@ export default {
     },
     volumeChange: function (volume) {
       this.$store.dispatch('SET_VOLUME', volume);
+    },
+    timeUpdate:  function (currentTime) {
+      this.$store.dispatch('SET_CURRENT_TIME', currentTime);
     },
   }
 }
