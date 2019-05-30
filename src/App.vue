@@ -23,7 +23,7 @@
     </div>
       
     <div>
-      <v-btn
+      <!-- <v-btn
         color="success"
         v-if="!this.isPlaying"
         v-on:click="play"
@@ -36,7 +36,7 @@
         v-on:click="stop"
       >
         пауза
-      </v-btn>
+      </v-btn> -->
       <v-btn color="info" v-on:click="prev">←предыдущий</v-btn>
       <v-btn color="info" v-on:click="next">следующий→</v-btn>
     </div>
