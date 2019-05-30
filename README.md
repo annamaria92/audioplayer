@@ -4,7 +4,9 @@
 
 Standard Tooling for Vue.js Development: https://cli.vuejs.org/
 
-Material Design Component Framework -https://vuetifyjs.com/en/getting-started/quick-start
+Material Design Component Framework: https://vuetifyjs.com/en/getting-started/quick-start
+
+The Vue Instance: https://vuejs.org/v2/guide/instance.html
 
 ## Project setup
 ```
