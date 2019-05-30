@@ -5,16 +5,14 @@
         <v-toolbar color="cyan" dark>
           <v-toolbar-title>Audio Player</v-toolbar-title>
         </v-toolbar>
-          <v-list>        
+          <v-list two-line>        
             <v-list-tile
               v-for="(item, index) in this.audioTracks"
               :key="index"
             >
               <v-list-tile-content v-on:click="choose(index)">
-                <v-list-tile-title>
-                  <span v-if="currentaudioIndex === index"> + </span>
-                  {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
-                </v-list-tile-title>
+                <v-list-tile-title v-html="item.singer"></v-list-tile-title>
+                <v-list-tile-sub-title v-html="item.song"></v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
