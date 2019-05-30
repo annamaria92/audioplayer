@@ -89,6 +89,7 @@ export default {
         index = 0;
       }
       this.$store.dispatch('SET_CURRENTAUDIO', index);
+      this.$store.dispatch('SET_PLAY', false);
     },
     prev: function () {
       let index = this.currentaudioIndex - 1;
@@ -96,12 +97,14 @@ export default {
         index = this.audioTracks.length - 1;
       }
       this.$store.dispatch('SET_CURRENTAUDIO', index);
+      this.$store.dispatch('SET_PLAY', false);
     },
     choose: function (index) {
       if (index === this.currentaudioIndex) {
         this.$store.dispatch('SET_PLAY', !this.isPlaying);
       } else {
         this.$store.dispatch('SET_CURRENTAUDIO', index);
+        this.$store.dispatch('SET_PLAY', false);
       }
     },
   },
