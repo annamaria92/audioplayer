@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-layout row>
-      <v-flex xs12 sm6 offset-sm3 pt-3>
+      <v-flex xs12 sm6 offset-sm3>
         <v-toolbar color="cyan" dark>
           <v-toolbar-title>Audio Player</v-toolbar-title>
         </v-toolbar>
