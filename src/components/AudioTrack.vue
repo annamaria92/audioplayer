@@ -26,7 +26,8 @@ export default {
     singer: String,
     song: String,
     fileName: String,
-    isPlaying: Boolean
+    isPlaying: Boolean,
+    volume: Number
   },
   methods: {
     initAudio: function() {
@@ -43,17 +44,23 @@ export default {
       } else {
         this.$refs.audioElem.pause(); 
       }
+      
+      this.$refs.audioElem.volume = this.volume;
     },
     onPlaying: function() {
       this.$emit('playing', true);
     },
     onPause: function() {
       this.$emit('pause', true);
-    }
+    },
+    onVolumeChange: function() {
+      this.$emit('volume-change', this.$refs.audioElem.volume);
+    },
   },
   mounted() {
     this.$refs.audioElem.onplaying = this.onPlaying;
     this.$refs.audioElem.onpause = this.onPause;
+    this.$refs.audioElem.onvolumechange = this.onVolumeChange;
     this.initAudio();
   },
   beforeUpdate() {

@@ -23,9 +23,11 @@
               :singer="audioTracks[currentaudioIndex].singer"
               :song="audioTracks[currentaudioIndex].song"
               :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
+              :volume="audioTracks[currentaudioIndex].volume"
               :isPlaying="this.isPlaying"
               v-on:playing="play"
               v-on:pause="stop"
+              v-on:volume-change="volumeChange"
             />
           </div>
       
@@ -76,7 +78,7 @@ export default {
     },
     currentaudioIndex() {
       return this.$store.getters.CURRENTAUDIO;
-    }
+    },
   },
   methods: {
     visibleIndex: function (index) {
@@ -111,6 +113,9 @@ export default {
         this.$store.dispatch('SET_CURRENTAUDIO', index);
         this.$store.dispatch('SET_PLAY', false);
       }
+    },
+    volumeChange: function (volume) {
+      this.$store.dispatch('SET_VOLUME', volume);
     },
   }
 }
