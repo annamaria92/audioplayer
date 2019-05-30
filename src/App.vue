@@ -10,10 +10,6 @@
             <span v-if="currentaudioIndex === index"> + </span>
             {{ visibleIndex(index) }} : {{item.singer}} - {{item.song}}
           </v-list-tile-title>
-          <!-- <audio controls>
-            <source :src="musicServer + item.fileName" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio> -->
         </v-list-tile-content>
       </v-list-tile>
     </v-list>

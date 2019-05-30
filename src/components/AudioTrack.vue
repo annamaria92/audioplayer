@@ -6,6 +6,10 @@
     <p>
       Source: {{fileName}}
     </p>
+    <audio controls>
+      <source :src="fileName" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 </template>
 
