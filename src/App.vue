@@ -18,9 +18,11 @@
       </v-list-tile>
     </v-list>
     <div>
-      <p>
-        Current audio: {{ musicServer + audioTracks[currentaudioIndex].fileName }}
-      </p>      
+      <AudioTrack
+        :singer="audioTracks[currentaudioIndex].singer"
+        :song="audioTracks[currentaudioIndex].song"
+        :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
+      />
     </div>
       
     <div>
@@ -52,11 +54,13 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+import AudioTrack from './components/AudioTrack.vue'
 
 export default {
   name: 'app',
   components: {
     // HelloWorld
+    AudioTrack
   },
   computed: {
     musicServer() {
