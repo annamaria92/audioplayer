@@ -107,10 +107,6 @@ export default {
         this.$store.dispatch('SET_PLAY', false);
       }
     },
-  },
-  mounted() {
-    // eslint-disable-next-line
-    console.log(this.audioTracks);
   }
 }
 </script>
