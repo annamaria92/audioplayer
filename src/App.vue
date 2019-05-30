@@ -1,7 +1,10 @@
 <template>
   <v-app id="app">
     <v-layout row>
-      <v-flex xs12 sm6 offset-sm3>
+      <v-flex xs12 sm6 offset-sm3 pt-3>
+        <v-toolbar color="cyan" dark>
+          <v-toolbar-title>Audio Player</v-toolbar-title>
+        </v-toolbar>
           <v-list>        
             <v-list-tile
               v-for="(item, index) in this.audioTracks"
@@ -15,6 +18,7 @@
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
+
           <div>
             <AudioTrack
               :singer="audioTracks[currentaudioIndex].singer"
