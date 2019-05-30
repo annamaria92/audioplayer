@@ -4,8 +4,9 @@
       {{song}} by {{singer}}
     </p>
     <p>
-      Source: {{fileName}}
+      Source is {{ isPlaying ? "playing" : "paused" }}: {{fileName}}
     </p>
+    
     <audio controls>
       <source :src="fileName" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -20,6 +21,7 @@ export default {
     singer: String,
     song: String,
     fileName: String,
+    isPlaying: Boolean
   }
 }
 </script>

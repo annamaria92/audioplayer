@@ -18,6 +18,7 @@
         :singer="audioTracks[currentaudioIndex].singer"
         :song="audioTracks[currentaudioIndex].song"
         :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
+        :isPlaying="this.isPlaying"
       />
     </div>
       
