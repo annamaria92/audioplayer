@@ -8,6 +8,8 @@ Material Design Component Framework: https://vuetifyjs.com/en/getting-started/qu
 
 The Vue Instance: https://vuejs.org/v2/guide/instance.html
 
+Passing Static or Dynamic Props: https://vuejs.org/v2/guide/components-props.html#Passing-Static-or-Dynamic-Props
+
 ## Project setup
 ```
 npm install
