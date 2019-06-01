@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-      <!-- List block -->
-      <div>
-        <div>
-          Audio Player by Anna
-        </div>
+      <header>
+        Audio Player by Anna
+      </header>
 
+      <div>
         <ul>
           <li
             v-for="(item, index) in this.audioTracks"
