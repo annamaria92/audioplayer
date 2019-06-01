@@ -66,9 +66,9 @@
     <!-- Audio tracks block -->
 
     <div class="pb-4">
-      <ul>
-        <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
+      <ul class="list-group">        
         <li
+          class="list-group-item"
           v-for="(item, index) in this.audioTracks"
           v-if="index === currentaudioIndex"
           :key="index"
