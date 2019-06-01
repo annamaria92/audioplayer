@@ -82,12 +82,6 @@
         <small> {{ this.audioTracks[this.currentaudioIndex].fileName }} </small> <br>
         <small> Громкость: {{ this.audioTracks[this.currentaudioIndex].volume }} </small> <br>
         <small> Прогресс: {{ this.audioTracks[this.currentaudioIndex].time }} </small> <br>
-        <small> Аудио: {{ 
-          this.audioTracks[this.currentaudioIndex].audioElem 
-            ? this.audioTracks[this.currentaudioIndex].audioElem
-            : "не создано"
-          }}
-        </small>
       </p>
       <p> Статус: {{ isPlaying ? "воспроизведение" : "пауза" }} </p>
     </div>
