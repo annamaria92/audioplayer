@@ -29,11 +29,11 @@
       </ul>
     </div>
 
-    <div class="pb-4 d-flex flex-wrap justify-content-around">
-      <button class="btn btn-secondary" v-on:click="play"><i class="fa fa-play"></i></button>
-      <button class="btn btn-secondary" v-on:click="stop"><i class="fa fa-pause"></i></button>
-      <button class="btn btn-secondary" v-on:click="prev"><i class="fa fa-chevron-left"></i></button>
-      <button class="btn btn-secondary" v-on:click="next"><i class="fa fa-chevron-right"></i></button>
+    <div class="pb-4 d-flex flex-wrap justify-content-start">
+      <button class="btn btn-secondary mr-2" v-if="!isPlaying" v-on:click="play"><i class="fa fa-play"></i></button>
+      <button class="btn btn-secondary mr-2" v-if="isPlaying" v-on:click="stop"><i class="fa fa-pause"></i></button>
+      <button class="btn btn-secondary mr-2" v-on:click="prev"><i class="fa fa-chevron-left"></i></button>
+      <button class="btn btn-secondary mr-2" v-on:click="next"><i class="fa fa-chevron-right"></i></button>
     </div>
 
     <!-- <AudioTrack
