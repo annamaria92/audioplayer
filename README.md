@@ -18,6 +18,8 @@ Please never use Vuetify!
 
 Cannot add Vuetify to existing Vue application: https://stackoverflow.com/questions/56404847/is-there-correct-getting-started-documentation
 
+Autoplay Policy: 
+https://developers.google.com/web/updates/2017/09/autoplay-policy-changes
 
 ## Project setup
 ```
