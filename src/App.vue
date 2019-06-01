@@ -163,6 +163,7 @@ export default {
 <style>
 
 .selected-item {
+  background-color: aliceblue;
   color: red;
 }
 
