@@ -3,82 +3,86 @@
     id="app"
     class="container container-center"
   >
-      <header class="pb-4">
-        <h1>
-          Audio Player by Anna
-        </h1>
-      </header>
+    <header class="pb-4">
+      <h1>
+        Audio Player by Anna
+      </h1>
+    </header>
 
-      <div class="pb-4">
-        <ul class="list-group">
-          <li
-            class="list-group-item ap-list-item"
-            v-for="(item, index) in this.audioTracks"
-            v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
-            v-on:click="choose(index)"
-            :key="index"
-          >
-            <div>
-              {{item.singer}} - 
-              {{item.song}}
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="pb-4">
+      <ul class="list-group">
+        <li
+          class="list-group-item ap-list-item"
+          v-for="(item, index) in this.audioTracks"
+          v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
+          v-on:click="choose(index)"
+          :key="index"
+        >
+          <div>
+            {{item.singer}} - 
+            {{item.song}}
+          </div>
+        </li>
+      </ul>
+    </div>
 
-      <div class="pb-4 d-flex justify-content-around">
-        <button class="btn btn-secondary" v-on:click="prev">←предыдущий</button>
-        <button class="btn btn-secondary" v-on:click="next">следующий→</button>
-      </div>
+    <div class="pb-4 d-flex justify-content-around">
+      <button class="btn btn-secondary" v-on:click="prev">←предыдущий</button>
+      <button class="btn btn-secondary" v-on:click="next">следующий→</button>
+    </div>
 
-            <!-- <AudioTrack
-              :singer="audioTracks[currentaudioIndex].singer"
-              :song="audioTracks[currentaudioIndex].song"
-              :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
-              :volume="audioTracks[currentaudioIndex].volume"
-              :currentTime="audioTracks[currentaudioIndex].time"
-              :isPlaying="this.isPlaying"
-              v-on:playing="play"
-              v-on:pause="stop"
-              v-on:volume-change="volumeChange"
-              v-on:time-update="timeUpdate"
-            /> -->
-            <!-- <v-btn
-              color="success"
-              v-if="!this.isPlaying"
-              v-on:click="play"
-            >
-              воспроизведение
-            </v-btn>
-            <v-btn
-              color="error"
-              v-if="this.isPlaying"
-              v-on:click="stop"
-            >
-              пауза
-            </v-btn> -->
-          <!-- найти трек -->
+    <!-- <AudioTrack
+      :singer="audioTracks[currentaudioIndex].singer"
+      :song="audioTracks[currentaudioIndex].song"
+      :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
+      :volume="audioTracks[currentaudioIndex].volume"
+      :currentTime="audioTracks[currentaudioIndex].time"
+      :isPlaying="this.isPlaying"
+      v-on:playing="play"
+      v-on:pause="stop"
+      v-on:volume-change="volumeChange"
+      v-on:time-update="timeUpdate"
+    /> -->
 
-          <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <v-btn
+      color="success"
+      v-if="!this.isPlaying"
+      v-on:click="play"
+    >
+      воспроизведение
+    </v-btn>
+    <v-btn
+      color="error"
+      v-if="this.isPlaying"
+      v-on:click="stop"
+    >
+      пауза
+    </v-btn> -->
 
-        <!-- Audio tracks block -->
-      
-        <ul>
-          <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
-          <li
-            v-for="(item, index) in this.audioTracks"
-            v-if="index === currentaudioIndex"
-            :key="index"
-          >
-            <div v-on:click="choose(index)">              
-              <audio controls>
-                <source :src="musicServer + item.fileName" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-            </div>
+    <!-- найти трек -->
 
-          </li>
-        </ul>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+
+    <!-- Audio tracks block -->
+
+    <div class="pb-4">
+      <ul>
+        <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
+        <li
+          v-for="(item, index) in this.audioTracks"
+          v-if="index === currentaudioIndex"
+          :key="index"
+        >
+          <div v-on:click="choose(index)">              
+            <audio controls>
+              <source :src="musicServer + item.fileName" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
