@@ -5,7 +5,7 @@
   >
     <header class="pb-4">
       <h1>
-        Audio Player by Anna
+        Audio Player
       </h1>
     </header>
 
