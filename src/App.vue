@@ -170,13 +170,27 @@ export default {
       this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
     },
     volumeChange: function (volume) {
-      this.$store.dispatch('SET_VOLUME', volume);
+      const refName = 'audioElem' + this.currentaudioIndex;
+      if (this.$refs[refName] && this.$refs[refName][0]) {
+        const volume = this.$refs[refName][0].volume;
+        this.$store.dispatch('SET_VOLUME', volume);
+      }
     },
     timeUpdate:  function (currentTime) {
-      this.$store.dispatch('SET_CURRENT_TIME', currentTime);
+      // this.$store.dispatch('SET_CURRENT_TIME', currentTime);
     },
     mountNativeEventsHandlers: function() {
-      console.log('mountNativeEventsHandlers');
+      const refName = 'audioElem' + this.currentaudioIndex;
+      if (this.$refs[refName] && this.$refs[refName][0]) {
+        const audioElem = this.$refs[refName][0];
+        
+        audioElem.volume = this.audioTracks[this.currentaudioIndex].volume;
+
+        // audioElem.onplaying = this.onPlaying;
+        // audioElem.onpause = this.onPause;
+        // audioElem.ontimeupdate = this.timeUpdate;
+        audioElem.onvolumechange = this.volumeChange; 
+      }
     },
   },
   mounted() {
