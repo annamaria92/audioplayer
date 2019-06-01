@@ -7,16 +7,6 @@
         </div>
 
         <ul>
-          <!--
-            NOTE!
-
-            Vuetify styles are bad.
-
-            I was not able to find vuetify best practices.
-            So I used 'selected-item' class to highlight selected element.
-
-            TODO: fix it when Vuetify Framework documentation is updated.
-          -->
           <li
             v-for="(item, index) in this.audioTracks"
             :key="index"
@@ -59,8 +49,8 @@
             >
               пауза
             </v-btn> -->
-            <v-btn color="info" v-on:click="prev">←предыдущий</v-btn>
-            <v-btn color="info" v-on:click="next">следующий→</v-btn>
+            <button v-on:click="prev">←предыдущий</button>
+            <button v-on:click="next">следующий→</button>
           </div>
           <!-- найти трек -->
 
