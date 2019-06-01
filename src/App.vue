@@ -6,7 +6,7 @@
           Audio Player by Anna
         </div>
 
-        <v-list two-line>
+        <ul>
           <!--
             NOTE!
 
@@ -27,7 +27,7 @@
               <v-list-tile-sub-title v-html="item.song"></v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
-        </v-list>
+        </ul>
 
           <div>
             <!-- <AudioTrack
@@ -68,7 +68,7 @@
 
         <!-- Audio tracks block -->
       
-        <v-list three-line>
+        <ul>
           <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
           <v-list-tile
             v-for="(item, index) in this.audioTracks"
@@ -85,7 +85,7 @@
             </v-list-tile-content>
 
           </v-list-tile>
-        </v-list>
+        </ul>
       </div>
   </div>
 </template>
