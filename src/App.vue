@@ -139,6 +139,13 @@ export default {
       }
       
       this.$store.dispatch('SET_PLAY', false);
+
+      refName = 'audioElem' + this.currentaudioIndex;
+      if (this.$refs[refName] && this.$refs[refName][0]) {
+        const currentTime = this.$refs[refName][0].currentTime;
+        console.log('Save position after stop: ', currentTime);
+        this.$store.dispatch('SET_CURRENT_TIME', currentTime);
+      }
     },
     next: function () {
       let index = this.currentaudioIndex + 1;
