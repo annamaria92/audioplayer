@@ -23,6 +23,8 @@ git add -A
 git commit -m 'deploy'
 
 # deploy
-git push -f git@github.com:annamaria92/audioplayer.git master:gh-pages
+git remote add origin https://github.com/annamaria92/audioplayer
+git checkout -B gh-pages
+git push -f origin gh-pages
 
 cd -
