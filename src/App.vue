@@ -85,22 +85,20 @@ export default {
       }
     },
     stop: function () {
-      let i;
-      let refName;
-      for (i = 0; i < this.audioTracks.length; i++) {
-        refName = 'audioElem' + i;
+      if (this.isPlaying) {
+        let refName = 'audioElem' + this.currentaudioIndex;
         if (this.$refs[refName] && this.$refs[refName][0]) {
           this.$refs[refName][0].pause();
         }
-      }
       
-      this.$store.dispatch('SET_PLAY', false);
+        this.$store.dispatch('SET_PLAY', false);
 
-      refName = 'audioElem' + this.currentaudioIndex;
-      if (this.$refs[refName] && this.$refs[refName][0]) {
-        const currentTime = this.$refs[refName][0].currentTime;
-        console.log('Save position after stop: ', currentTime);
-        this.$store.dispatch('SET_CURRENT_TIME', currentTime);
+        refName = 'audioElem' + this.currentaudioIndex;
+        if (this.$refs[refName] && this.$refs[refName][0]) {
+          const currentTime = this.$refs[refName][0].currentTime;
+          console.log('Save position after stop: ', currentTime);
+          this.$store.dispatch('SET_CURRENT_TIME', currentTime);
+        }
       }
     },
     next: function () {
@@ -139,13 +137,6 @@ export default {
         this.$store.dispatch('SET_VOLUME', volume);
       }
     },
-    onPlay: function () {
-      this.$store.dispatch('SET_PLAY', true);
-    },
-    onPause: function () {
-      this.$store.dispatch('SET_PLAY', false);
-    },
-
     mountNativeEventsHandlers: function() {
       const refName = 'audioElem' + this.currentaudioIndex;
       if (this.$refs[refName] && this.$refs[refName][0]) {
@@ -153,8 +144,8 @@ export default {
         
         audioElem.volume = this.audioTracks[this.currentaudioIndex].volume;
 
-        audioElem.onplay = this.onPlay;
-        audioElem.onpause = this.onPause;
+        audioElem.onplay = this.play;
+        audioElem.onpause = this.stop;
         audioElem.onvolumechange = this.volumeChange; 
       }
     },
