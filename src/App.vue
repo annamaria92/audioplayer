@@ -75,21 +75,14 @@ export default {
       return index+1
     },
     play: function () {
-      let i;
-      let refName;
-      for (i = 0; i < this.audioTracks.length; i++) {
-        refName = 'audioElem' + i;
+      if (!this.isPlaying) {
+        let refName = 'audioElem' + this.currentaudioIndex;
         if (this.$refs[refName] && this.$refs[refName][0]) {
-          this.$refs[refName][0].pause();
+          this.$refs[refName][0].play();
         }
-      }
 
-      refName = 'audioElem' + this.currentaudioIndex;
-      if (this.$refs[refName] && this.$refs[refName][0]) {
-        this.$refs[refName][0].play();
+        this.$store.dispatch('SET_PLAY', true);
       }
-
-      this.$store.dispatch('SET_PLAY', true);
     },
     stop: function () {
       let i;
