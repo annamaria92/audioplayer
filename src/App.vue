@@ -3,8 +3,8 @@
     id="app"
     class="container container-center"
   >
-    <header class="pb-4">
-      <h1>
+    <header class="pb-4 pt-4">
+      <h1 class="text-center">
         Audio Player
       </h1>
     </header>
