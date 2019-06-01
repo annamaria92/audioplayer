@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
         audioElem: null,
       },
     ],
-    currentaudio: 0,
+    currentaudioindex: 0,
     play: false,
   },
   getters: {
@@ -50,8 +50,8 @@ export const store = new Vuex.Store({
     AUDIOTRACKS: state => {
       return state.audiotracks;
     },
-    CURRENTAUDIO: state => {
-      return state.currentaudio;
+    CURRENTAUDIOINDEX: state => {
+      return state.currentaudioindex;
     },
     PLAY: state => {
       return state.play;
@@ -59,30 +59,30 @@ export const store = new Vuex.Store({
   },
   mutations: {
     SET_PLAY: (state, payload) => {
-      if (payload && !state.audiotracks[state.currentaudio].audioElem) {        
-        const currentTrack = state.audiotracks[state.currentaudio];
+      if (payload && !state.audiotracks[state.currentaudioindex].audioElem) {        
+        const currentTrack = state.audiotracks[state.currentaudioindex];
         currentTrack.audioElem = new Audio();
         currentTrack.audioElem.src = currentTrack.fileName;
         currentTrack.audioElem.load();
       }
       state.play = payload;
     },
-    SET_CURRENTAUDIO: (state, payload) => {
-      state.currentaudio = payload;
+    SET_CURRENTAUDIOINDEX: (state, payload) => {
+      state.currentaudioindex = payload;
     },
     SET_VOLUME: (state, payload) => {
-      state.audiotracks[state.currentaudio].volume = payload;
+      state.audiotracks[state.currentaudioindex].volume = payload;
     },
     SET_CURRENT_TIME: (state, payload) => {
-      state.audiotracks[state.currentaudio].time = payload;
+      state.audiotracks[state.currentaudioindex].time = payload;
     },
   },
   actions: {
     SET_PLAY: (context, payload) => {
       context.commit('SET_PLAY', payload);
     },
-    SET_CURRENTAUDIO: (context, payload) => {
-      context.commit('SET_CURRENTAUDIO', payload);
+    SET_CURRENTAUDIOINDEX: (context, payload) => {
+      context.commit('SET_CURRENTAUDIOINDEX', payload);
     },
     SET_VOLUME: (context, payload) => {
       context.commit('SET_VOLUME', payload);

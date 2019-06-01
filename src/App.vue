@@ -130,7 +130,7 @@ export default {
       return this.$store.getters.PLAY;
     },
     currentaudioIndex() {
-      return this.$store.getters.CURRENTAUDIO;
+      return this.$store.getters.CURRENTAUDIOINDEX;
     },
   },
   methods: {
@@ -148,7 +148,7 @@ export default {
       if (index > this.audioTracks.length - 1) {
         index = 0;
       }
-      this.$store.dispatch('SET_CURRENTAUDIO', index);
+      this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
       this.$store.dispatch('SET_PLAY', false);
     },
     prev: function () {
@@ -156,14 +156,14 @@ export default {
       if (index < 0) {
         index = this.audioTracks.length - 1;
       }
-      this.$store.dispatch('SET_CURRENTAUDIO', index);
+      this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
       this.$store.dispatch('SET_PLAY', false);
     },
     choose: function (index) {
       if (index === this.currentaudioIndex) {
         this.$store.dispatch('SET_PLAY', !this.isPlaying);
       } else {
-        this.$store.dispatch('SET_CURRENTAUDIO', index);
+        this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
         this.$store.dispatch('SET_PLAY', false);
       }
     },
