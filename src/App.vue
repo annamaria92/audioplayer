@@ -167,7 +167,6 @@ export default {
     },
     setCurrentAudioIndex: function (index) {
       this.stop();
-      this.unmountNativeEventsHandlers();
       this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
     },
     volumeChange: function (volume) {
@@ -178,9 +177,6 @@ export default {
     },
     mountNativeEventsHandlers: function() {
       console.log('mountNativeEventsHandlers');
-    },
-    unmountNativeEventsHandlers: function() {
-      console.log('unmountNativeEventsHandlers');
     },
   },
   mounted() {
