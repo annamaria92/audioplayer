@@ -97,24 +97,6 @@
       </p>
       <p> Статус: {{ isPlaying ? "воспроизведение" : "пауза" }} </p>
     </div>
-
-    <div class="pb-4">
-      <ul class="list-group">        
-        <li
-          class="list-group-item"
-          v-for="(item, index) in this.audioTracks"          
-          :key="index"
-        >
-          <div v-on:click="choose(index)">              
-            <audio controls>
-              <source :src="musicServer + item.fileName" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
