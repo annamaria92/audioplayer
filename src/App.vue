@@ -14,10 +14,11 @@
           <li
             class="list-group-item ap-list-item"
             v-for="(item, index) in this.audioTracks"
-            :key="index"
             v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
+            v-on:click="choose(index)"
+            :key="index"
           >
-            <div v-on:click="choose(index)">
+            <div>
               {{item.singer}} - 
               {{item.song}}
             </div>
