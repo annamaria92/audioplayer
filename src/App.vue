@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <!-- List block -->
-      <v-flex xs12 sm6 offset-sm3>
+      <div>
         <v-toolbar color="cyan" dark>
           <v-toolbar-title>Audio Player by Anna</v-toolbar-title>
         </v-toolbar>
@@ -86,7 +86,7 @@
 
           </v-list-tile>
         </v-list>
-      </v-flex>
+      </div>
   </div>
 </template>
 
