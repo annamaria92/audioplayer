@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <v-layout row>
-
       <!-- List block -->
       <v-flex xs12 sm6 offset-sm3>
         <v-toolbar color="cyan" dark>
@@ -89,7 +87,6 @@
           </v-list-tile>
         </v-list>
       </v-flex>
-    </v-layout>          
   </div>
 </template>
 
