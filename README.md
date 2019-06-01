@@ -13,6 +13,11 @@ Passing Static or Dynamic Props: https://vuejs.org/v2/guide/components-props.htm
 HTML Audio/Video DOM playing Event: https://www.w3schools.com/tags/av_event_playing.asp
 
 
+## Problems
+
+Cannot add Vuetify to existing Vue application: https://stackoverflow.com/questions/56404847/is-there-correct-getting-started-documentation
+
+
 ## Project setup
 ```
 npm install
