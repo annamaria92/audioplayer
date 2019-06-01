@@ -132,7 +132,7 @@ export default {
       this.stop();
       this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
     },
-    volumeChange: function (volume) {
+    volumeChange: function () {
       const refName = 'audioElem' + this.currentaudioIndex;
       if (this.$refs[refName] && this.$refs[refName][0]) {
         const volume = this.$refs[refName][0].volume;
