@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-      <header>
-        Audio Player by Anna
+      <header class="p-4">
+        <h1>
+          Audio Player by Anna
+        </h1>
       </header>
 
       <div>
