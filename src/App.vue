@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <v-layout row>
+    <v-layout column>
 
       <!-- List block -->
       <v-flex xs12 sm6 offset-sm3>
@@ -71,7 +71,23 @@
 
       <!-- Audio tracks block -->
       <v-flex xs12 sm6 offset-sm3>
-        <!-- TODO -->
+        <v-list three-line>
+          <v-list-tile
+            v-for="(item, index) in this.audioTracks"
+            v-if="index === currentaudioIndex"
+            :key="index"
+          >
+            <v-list-tile-content v-on:click="choose(index)">
+              <!-- <v-list-tile-title v-html="item.singer"></v-list-tile-title>
+              <v-list-tile-sub-title v-html="item.song"></v-list-tile-sub-title> -->
+              <audio controls>
+                <source :src="musicServer + item.fileName" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </v-list-tile-content>
+
+          </v-list-tile>
+        </v-list>
       </v-flex>
     </v-layout>          
   </v-app>
@@ -127,7 +143,6 @@ export default {
       this.$store.dispatch('SET_PLAY', false);
     },
     choose: function (index) {
-      console.log('choose', index);
       if (index === this.currentaudioIndex) {
         this.$store.dispatch('SET_PLAY', !this.isPlaying);
       } else {
