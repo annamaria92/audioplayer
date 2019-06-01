@@ -10,6 +10,9 @@
     </header>
 
     <div class="pb-4">
+      <p>
+        Моя музыка
+      </p>
       <ul class="list-group">
         <li
           class="list-group-item ap-list-item"
