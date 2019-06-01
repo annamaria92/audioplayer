@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <v-layout column>
+    <v-layout row>
 
       <!-- List block -->
       <v-flex xs12 sm6 offset-sm3>
@@ -67,10 +67,9 @@
           <!-- найти трек -->
 
           <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-      </v-flex>
 
-      <!-- Audio tracks block -->
-      <v-flex xs12 sm6 offset-sm3>
+        <!-- Audio tracks block -->
+      
         <v-list three-line>
           <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
           <v-list-tile
