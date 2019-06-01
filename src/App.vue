@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="container container-center"
+  >
       <header class="p-4">
         <h1>
           Audio Player by Anna
