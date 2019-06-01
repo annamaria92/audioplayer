@@ -69,8 +69,7 @@
       <ul class="list-group">        
         <li
           class="list-group-item"
-          v-for="(item, index) in this.audioTracks"
-          v-if="index === currentaudioIndex"
+          v-for="(item, index) in this.audioTracks"          
           :key="index"
         >
           <div v-on:click="choose(index)">              
