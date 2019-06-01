@@ -59,6 +59,12 @@ export const store = new Vuex.Store({
   },
   mutations: {
     SET_PLAY: (state, payload) => {
+      if (payload && !state.audiotracks[state.currentaudio].audioElem) {        
+        const currentTrack = state.audiotracks[state.currentaudio];
+        currentTrack.audioElem = new Audio();
+        currentTrack.audioElem.src = currentTrack.fileName;
+        currentTrack.audioElem.load();
+      }
       state.play = payload;
     },
     SET_CURRENTAUDIO: (state, payload) => {
