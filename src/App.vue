@@ -42,38 +42,6 @@
       <button class="btn btn-secondary mr-2" v-on:click="next"><i class="fa fa-chevron-right"></i></button>
     </div>
 
-    <!-- <AudioTrack
-      :singer="audioTracks[currentaudioIndex].singer"
-      :song="audioTracks[currentaudioIndex].song"
-      :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
-      :volume="audioTracks[currentaudioIndex].volume"
-      :currentTime="audioTracks[currentaudioIndex].time"
-      :isPlaying="this.isPlaying"
-      v-on:playing="play"
-      v-on:pause="stop"
-      v-on:volume-change="volumeChange"
-      v-on:time-update="timeUpdate"
-    /> -->
-
-    <!-- <v-btn
-      color="success"
-      v-if="!this.isPlaying"
-      v-on:click="play"
-    >
-      воспроизведение
-    </v-btn>
-    <v-btn
-      color="error"
-      v-if="this.isPlaying"
-      v-on:click="stop"
-    >
-      пауза
-    </v-btn> -->
-
-    <!-- найти трек -->
-
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-
     <div class="pb-4">
       <p> {{ this.audioTracks[this.currentaudioIndex].singer }} - 
           {{ this.audioTracks[this.currentaudioIndex].song }} <br>
@@ -85,14 +53,9 @@
 </template>
 
 <script>
-// import AudioTrack from './components/AudioTrack.vue'
 
 export default {
   name: 'app',
-  components: {
-    // HelloWorld
-    // AudioTrack
-  },
   computed: {
     musicServer() {
       return this.$store.getters.MUSICSERVER;
@@ -182,9 +145,6 @@ export default {
         const volume = this.$refs[refName][0].volume;
         this.$store.dispatch('SET_VOLUME', volume);
       }
-    },
-    timeUpdate:  function (currentTime) {
-      // this.$store.dispatch('SET_CURRENT_TIME', currentTime);
     },
     mountNativeEventsHandlers: function() {
       const refName = 'audioElem' + this.currentaudioIndex;
