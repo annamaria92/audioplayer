@@ -17,7 +17,7 @@
 
             TODO: fix it when Vuetify Framework documentation is updated.
           -->
-          <v-list-tile
+          <li
             v-for="(item, index) in this.audioTracks"
             :key="index"
             v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
@@ -26,7 +26,7 @@
               <v-list-tile-title v-html="item.singer"></v-list-tile-title>
               <v-list-tile-sub-title v-html="item.song"></v-list-tile-sub-title>
             </v-list-tile-content>
-          </v-list-tile>
+          </li>
         </ul>
 
           <div>
@@ -70,7 +70,7 @@
       
         <ul>
           <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
-          <v-list-tile
+          <li
             v-for="(item, index) in this.audioTracks"
             v-if="index === currentaudioIndex"
             :key="index"
@@ -84,7 +84,7 @@
               </audio>
             </v-list-tile-content>
 
-          </v-list-tile>
+          </li>
         </ul>
       </div>
   </div>
