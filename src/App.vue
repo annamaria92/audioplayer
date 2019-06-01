@@ -72,6 +72,7 @@
       <!-- Audio tracks block -->
       <v-flex xs12 sm6 offset-sm3>
         <v-list three-line>
+          <!-- TODO: fix no-use-v-if-with-v-for eslint warning -->
           <v-list-tile
             v-for="(item, index) in this.audioTracks"
             v-if="index === currentaudioIndex"
