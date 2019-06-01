@@ -122,9 +122,32 @@ export default {
       return index+1
     },
     play: function () {
+      let i;
+      let refName;
+      for (i = 0; i < this.audioTracks.length; i++) {
+        refName = 'audioElem' + i;
+        if (this.$refs[refName] && this.$refs[refName][0]) {
+          this.$refs[refName][0].pause();
+        }
+      }
+
+      refName = 'audioElem' + this.currentaudioIndex;
+      if (this.$refs[refName] && this.$refs[refName][0]) {
+        this.$refs[refName][0].play();
+      }
+
       this.$store.dispatch('SET_PLAY', true);
     },
     stop: function () {
+      let i;
+      let refName;
+      for (i = 0; i < this.audioTracks.length; i++) {
+        refName = 'audioElem' + i;
+        if (this.$refs[refName] && this.$refs[refName][0]) {
+          this.$refs[refName][0].pause();
+        }
+      }
+      
       this.$store.dispatch('SET_PLAY', false);
     },
     next: function () {
