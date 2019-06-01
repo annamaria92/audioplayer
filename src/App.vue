@@ -2,9 +2,9 @@
   <div id="app">
       <!-- List block -->
       <div>
-        <v-toolbar color="cyan" dark>
-          <v-toolbar-title>Audio Player by Anna</v-toolbar-title>
-        </v-toolbar>
+        <div>
+          Audio Player by Anna
+        </div>
 
         <v-list two-line>
           <!--
