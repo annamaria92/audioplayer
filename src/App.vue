@@ -26,7 +26,7 @@
             {{item.song}}
           </div>
           <div v-if="index === currentaudioIndex" class="pt-2">
-            <audio controls>
+            <audio controls :ref="'audioElem' + index">
               <source :src="musicServer + item.fileName" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
