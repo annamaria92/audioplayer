@@ -13,6 +13,7 @@ export const store = new Vuex.Store({
         fileName: "Frank_Sinatra-Love_and_Marriage.mp3",
         volume: 1,
         time: 0,
+        audioElem: null,
       },
       {
         singer: "Astrud Gilberto",
@@ -20,6 +21,7 @@ export const store = new Vuex.Store({
         fileName: "Stan_Gets_and_Astrud_Gilberto-Girl_from_Ipanema.mp3",
         volume: 1,
         time: 0,
+        audioElem: null,
       },
       {
         singer: "Beatles",
@@ -27,6 +29,7 @@ export const store = new Vuex.Store({
         fileName: "Beatles-Yesterday.mp3",
         volume: 1,
         time: 0,
+        audioElem: null,
       },
       {
         singer: "Queen",
@@ -34,6 +37,7 @@ export const store = new Vuex.Store({
         fileName: "Queen-I_Want_To_Break_Free.mp3",
         volume: 1,
         time: 0,
+        audioElem: null,
       },
     ],
     currentaudio: 0,
