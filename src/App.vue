@@ -26,9 +26,11 @@
         </ul>
       </div>
 
-      <div>
+      <div class="pb-4 d-flex justify-content-around">
+        <button class="btn btn-secondary" v-on:click="prev">←предыдущий</button>
+        <button class="btn btn-secondary" v-on:click="next">следующий→</button>
+      </div>
 
-          <div>
             <!-- <AudioTrack
               :singer="audioTracks[currentaudioIndex].singer"
               :song="audioTracks[currentaudioIndex].song"
@@ -41,9 +43,6 @@
               v-on:volume-change="volumeChange"
               v-on:time-update="timeUpdate"
             /> -->
-          </div>
-      
-          <div>
             <!-- <v-btn
               color="success"
               v-if="!this.isPlaying"
@@ -58,9 +57,6 @@
             >
               пауза
             </v-btn> -->
-            <button v-on:click="prev">←предыдущий</button>
-            <button v-on:click="next">следующий→</button>
-          </div>
           <!-- найти трек -->
 
           <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -83,7 +79,6 @@
 
           </li>
         </ul>
-      </div>
   </div>
 </template>
 
