@@ -23,8 +23,8 @@
             v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
           >
             <div v-on:click="choose(index)">
-              {{item.singer}}
-              <v-list-tile-sub-title v-html="item.song"></v-list-tile-sub-title>
+              {{item.singer}} - 
+              {{item.song}}
             </div>
           </li>
         </ul>
@@ -76,7 +76,6 @@
             :key="index"
           >
             <div v-on:click="choose(index)">              
-              <!-- <v-list-tile-sub-title v-html="item.song"></v-list-tile-sub-title> -->
               <audio controls>
                 <source :src="musicServer + item.fileName" type="audio/mpeg">
                 Your browser does not support the audio element.
