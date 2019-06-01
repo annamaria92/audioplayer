@@ -6,10 +6,21 @@
           <v-toolbar-title>Audio Player by Anna</v-toolbar-title>
         </v-toolbar>
 
-        <v-list two-line>        
+        <v-list two-line>
+          <!--
+            NOTE!
+
+            Vuetify styles are bad.
+
+            I was not able to find vuetify best practices.
+            So I used 'selected-item' class to highlight selected element.
+
+            TODO: fix it when Vuetify Framework documentation is updated.
+          -->
           <v-list-tile
             v-for="(item, index) in this.audioTracks"
             :key="index"
+            v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
           >
             <v-list-tile-content v-on:click="choose(index)">
               <v-list-tile-title v-html="item.singer"></v-list-tile-title>
@@ -109,6 +120,7 @@ export default {
       this.$store.dispatch('SET_PLAY', false);
     },
     choose: function (index) {
+      console.log('choose', index);
       if (index === this.currentaudioIndex) {
         this.$store.dispatch('SET_PLAY', !this.isPlaying);
       } else {
@@ -127,4 +139,9 @@ export default {
 </script>
 
 <style>
+
+.selected-item {
+  color: red;
+}
+
 </style>
