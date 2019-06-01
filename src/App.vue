@@ -146,6 +146,13 @@ export default {
         this.$store.dispatch('SET_VOLUME', volume);
       }
     },
+    onPlay: function () {
+      this.$store.dispatch('SET_PLAY', true);
+    },
+    onPause: function () {
+      this.$store.dispatch('SET_PLAY', false);
+    },
+
     mountNativeEventsHandlers: function() {
       const refName = 'audioElem' + this.currentaudioIndex;
       if (this.$refs[refName] && this.$refs[refName][0]) {
@@ -153,9 +160,8 @@ export default {
         
         audioElem.volume = this.audioTracks[this.currentaudioIndex].volume;
 
-        // audioElem.onplaying = this.onPlaying;
-        // audioElem.onpause = this.onPause;
-        // audioElem.ontimeupdate = this.timeUpdate;
+        audioElem.onplay = this.onPlay;
+        audioElem.onpause = this.onPause;
         audioElem.onvolumechange = this.volumeChange; 
       }
     },
