@@ -19,7 +19,7 @@
         </v-list>
 
           <div>
-            <AudioTrack
+            <!-- <AudioTrack
               :singer="audioTracks[currentaudioIndex].singer"
               :song="audioTracks[currentaudioIndex].song"
               :fileName="musicServer + audioTracks[currentaudioIndex].fileName"
@@ -30,7 +30,7 @@
               v-on:pause="stop"
               v-on:volume-change="volumeChange"
               v-on:time-update="timeUpdate"
-            />
+            /> -->
           </div>
       
           <div>
@@ -60,13 +60,13 @@
 </template>
 
 <script>
-import AudioTrack from './components/AudioTrack.vue'
+// import AudioTrack from './components/AudioTrack.vue'
 
 export default {
   name: 'app',
   components: {
     // HelloWorld
-    AudioTrack
+    // AudioTrack
   },
   computed: {
     musicServer() {
