@@ -41,14 +41,6 @@
       <button class="btn btn-secondary mr-2" v-on:click="prev"><i class="fa fa-chevron-left"></i></button>
       <button class="btn btn-secondary mr-2" v-on:click="next"><i class="fa fa-chevron-right"></i></button>
     </div>
-
-    <div class="pb-4">
-      <p> {{ this.audioTracks[this.currentaudioIndex].singer }} - 
-          {{ this.audioTracks[this.currentaudioIndex].song }} <br>
-        <small> Громкость: {{ this.audioTracks[this.currentaudioIndex].volume }} </small> <br>
-        <small> Прогресс: {{ this.audioTracks[this.currentaudioIndex].time }} </small> <br>
-      </p>
-    </div>
   </div>
 </template>
 
