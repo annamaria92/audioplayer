@@ -168,10 +168,14 @@ export default {
     },
     choose: function (index) {
       if (index === this.currentaudioIndex) {
-        this.$store.dispatch('SET_PLAY', !this.isPlaying);
+        if (this.isPlaying) {
+          this.stop();
+        } else {
+          this.play();
+        }
       } else {
-        this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
-        this.$store.dispatch('SET_PLAY', false);
+        this.stop();
+        this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);        
       }
     },
     volumeChange: function (volume) {
