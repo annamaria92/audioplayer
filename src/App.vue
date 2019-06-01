@@ -12,7 +12,7 @@
       <div>
         <ul class="list-group">
           <li
-            class="list-group-item"
+            class="list-group-item ap-list-item"
             v-for="(item, index) in this.audioTracks"
             :key="index"
             v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
@@ -151,6 +151,10 @@ export default {
 </script>
 
 <style>
+
+.ap-list-item {
+  cursor: pointer;
+}
 
 .selected-item {
   background-color: aliceblue;
