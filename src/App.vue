@@ -74,16 +74,12 @@
 
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
-    <!-- Audio tracks block -->
     <div class="pb-4">
-      <p> Выбран трек: </p>
       <p> {{ this.audioTracks[this.currentaudioIndex].singer }} - 
           {{ this.audioTracks[this.currentaudioIndex].song }} <br>
-        <small> {{ this.audioTracks[this.currentaudioIndex].fileName }} </small> <br>
         <small> Громкость: {{ this.audioTracks[this.currentaudioIndex].volume }} </small> <br>
         <small> Прогресс: {{ this.audioTracks[this.currentaudioIndex].time }} </small> <br>
       </p>
-      <p> Статус: {{ isPlaying ? "воспроизведение" : "пауза" }} </p>
     </div>
   </div>
 </template>
