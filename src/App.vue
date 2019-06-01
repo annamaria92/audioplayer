@@ -145,16 +145,14 @@ export default {
       if (index > this.audioTracks.length - 1) {
         index = 0;
       }
-      this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
-      this.$store.dispatch('SET_PLAY', false);
+      this.setCurrentAudioIndex(index);
     },
     prev: function () {
       let index = this.currentaudioIndex - 1;
       if (index < 0) {
         index = this.audioTracks.length - 1;
       }
-      this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
-      this.$store.dispatch('SET_PLAY', false);
+      this.setCurrentAudioIndex(index);
     },
     choose: function (index) {
       if (index === this.currentaudioIndex) {
@@ -164,9 +162,13 @@ export default {
           this.play();
         }
       } else {
-        this.stop();
-        this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);        
+        this.setCurrentAudioIndex(index);        
       }
+    },
+    setCurrentAudioIndex: function (index) {
+      this.stop();
+      this.unmountNativeEventsHandlers();
+      this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
     },
     volumeChange: function (volume) {
       this.$store.dispatch('SET_VOLUME', volume);
@@ -174,7 +176,19 @@ export default {
     timeUpdate:  function (currentTime) {
       this.$store.dispatch('SET_CURRENT_TIME', currentTime);
     },
-  }
+    mountNativeEventsHandlers: function() {
+      console.log('mountNativeEventsHandlers');
+    },
+    unmountNativeEventsHandlers: function() {
+      console.log('unmountNativeEventsHandlers');
+    },
+  },
+  mounted() {
+    this.mountNativeEventsHandlers();
+  },
+  updated() {    
+    this.mountNativeEventsHandlers();
+  },
 }
 </script>
 
