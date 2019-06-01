@@ -38,6 +38,7 @@ export const store = new Vuex.Store({
     ],
     currentaudioindex: 0,
     play: false,
+    restored: true,
   },
   getters: {
     MUSICSERVER: state => {
@@ -52,10 +53,16 @@ export const store = new Vuex.Store({
     PLAY: state => {
       return state.play;
     },
+    RESTORED: state => {
+      return state.restored;
+    },
   },
   mutations: {
     SET_PLAY: (state, payload) => {
       state.play = payload;
+    },
+    SET_RESTORED: (state, payload) => {
+      state.restored = payload;
     },
     SET_CURRENTAUDIOINDEX: (state, payload) => {
       state.currentaudioindex = payload;
@@ -70,6 +77,9 @@ export const store = new Vuex.Store({
   actions: {
     SET_PLAY: (context, payload) => {
       context.commit('SET_PLAY', payload);
+    },
+    SET_RESTORED: (context, payload) => {
+      context.commit('SET_RESTORED', payload);
     },
     SET_CURRENTAUDIOINDEX: (context, payload) => {
       context.commit('SET_CURRENTAUDIOINDEX', payload);

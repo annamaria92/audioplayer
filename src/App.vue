@@ -66,6 +66,9 @@ export default {
     isPlaying() {
       return this.$store.getters.PLAY;
     },
+    isRestored() {
+      return this.$store.getters.RESTORED;
+    },
     currentaudioIndex() {
       return this.$store.getters.CURRENTAUDIOINDEX;
     },
@@ -96,7 +99,8 @@ export default {
         refName = 'audioElem' + this.currentaudioIndex;
         if (this.$refs[refName] && this.$refs[refName][0]) {
           const currentTime = this.$refs[refName][0].currentTime;
-          console.log('Save position after stop: ', currentTime);
+
+          // Save position after stop: currentTime
           this.$store.dispatch('SET_CURRENT_TIME', currentTime);
         }
       }
@@ -128,6 +132,7 @@ export default {
     },
     setCurrentAudioIndex: function (index) {
       this.stop();
+      this.$store.dispatch('SET_RESTORED', false);
       this.$store.dispatch('SET_CURRENTAUDIOINDEX', index);
     },
     volumeChange: function () {
@@ -135,6 +140,18 @@ export default {
       if (this.$refs[refName] && this.$refs[refName][0]) {
         const volume = this.$refs[refName][0].volume;
         this.$store.dispatch('SET_VOLUME', volume);
+      }
+    },
+    oncanplay: function () {
+      if (!this.isRestored) {
+        const refName = 'audioElem' + this.currentaudioIndex;
+        if (this.$refs[refName] && this.$refs[refName][0]) {
+          const restoredTime = this.audioTracks[this.currentaudioIndex].time;
+
+          // Restore position on track: restoredTime
+          this.$store.dispatch('SET_RESTORED', true);
+          this.$refs[refName][0].currentTime = restoredTime;
+        }
       }
     },
     mountNativeEventsHandlers: function() {
@@ -146,6 +163,7 @@ export default {
 
         audioElem.onplay = this.play;
         audioElem.onpause = this.stop;
+        audioElem.oncanplay = this.oncanplay;
         audioElem.onvolumechange = this.volumeChange; 
       }
     },
