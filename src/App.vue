@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <div id="app">
     <v-layout row>
 
       <!-- List block -->
@@ -90,7 +90,7 @@
         </v-list>
       </v-flex>
     </v-layout>          
-  </v-app>
+  </div>
 </template>
 
 <script>
