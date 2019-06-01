@@ -7,8 +7,9 @@
       </header>
 
       <div>
-        <ul>
+        <ul class="list-group">
           <li
+            class="list-group-item"
             v-for="(item, index) in this.audioTracks"
             :key="index"
             v-bind:class="{ 'selected-item' : index === currentaudioIndex }"
