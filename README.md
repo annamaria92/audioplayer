@@ -10,6 +10,7 @@ Passing Static or Dynamic Props: https://vuejs.org/v2/guide/components-props.htm
 
 HTML Audio/Video DOM playing Event: https://www.w3schools.com/tags/av_event_playing.asp
 
+How I use Vue.js on GitHub Pages: https://dev.to/tiim/how-i-use-vue-js-on-github-pages-45np
 
 ## Problems
 
