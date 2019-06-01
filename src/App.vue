@@ -26,8 +26,16 @@
             {{item.song}}
           </div>
           <div v-if="index === currentaudioIndex">
-            <i class="fa fa-play" v-if="!isPlaying"></i>
-            <i class="fa fa-pause" v-if="isPlaying"></i>
+            <p>
+              <i class="fa fa-play" v-if="!isPlaying"></i>
+              <i class="fa fa-pause" v-if="isPlaying"></i>
+            </p>
+            <p>
+              <audio controls>
+                <source :src="musicServer + item.fileName" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </p>
           </div>
         </li>
       </ul>
