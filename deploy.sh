@@ -25,6 +25,14 @@ git commit -m 'deploy'
 # deploy
 git remote add origin https://github.com/annamaria92/audioplayer
 git checkout -B gh-pages
+
+# Go to /dist
+# Rename href=/ to href=/audioplayer/
+# Rename src=/ to src=/audioplayer/
+
+git add *
+git commit -m "update"
+
 git push -f origin gh-pages
 
 cd -
