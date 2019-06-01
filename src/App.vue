@@ -25,6 +25,10 @@
             {{item.singer}} - 
             {{item.song}}
           </div>
+          <div v-if="index === currentaudioIndex">
+            <i class="fa fa-play" v-if="!isPlaying"></i>
+            <i class="fa fa-pause" v-if="isPlaying"></i>
+          </div>
         </li>
       </ul>
     </div>
