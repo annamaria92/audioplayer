@@ -25,17 +25,11 @@
             {{item.singer}} - 
             {{item.song}}
           </div>
-          <div v-if="index === currentaudioIndex">
-            <p>
-              <i class="fa fa-play" v-if="!isPlaying"></i>
-              <i class="fa fa-pause" v-if="isPlaying"></i>
-            </p>
-            <p>
-              <audio controls>
-                <source :src="musicServer + item.fileName" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-            </p>
+          <div v-if="index === currentaudioIndex" class="pt-2">
+            <audio controls>
+              <source :src="musicServer + item.fileName" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
           </div>
         </li>
       </ul>
@@ -174,8 +168,7 @@ export default {
 }
 
 .selected-item {
-  background-color: aliceblue;
-  color: red;
+  font-weight: bold;
 }
 
 </style>
