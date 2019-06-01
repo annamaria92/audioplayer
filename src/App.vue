@@ -3,13 +3,13 @@
     id="app"
     class="container container-center"
   >
-      <header class="p-4">
+      <header class="pb-4">
         <h1>
           Audio Player by Anna
         </h1>
       </header>
 
-      <div>
+      <div class="pb-4">
         <ul class="list-group">
           <li
             class="list-group-item ap-list-item"
@@ -24,6 +24,9 @@
             </div>
           </li>
         </ul>
+      </div>
+
+      <div>
 
           <div>
             <!-- <AudioTrack
