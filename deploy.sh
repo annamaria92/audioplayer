@@ -23,6 +23,6 @@ git add -A
 git commit -m 'deploy'
 
 # deploy
-git push -f git@github.com:<username>/<repo>.git <branch>
+git push -f git@github.com:annamaria92/audioplayer.git gh-pages
 
 cd -
