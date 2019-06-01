@@ -1,6 +1,8 @@
 <template>
   <v-app id="app">
     <v-layout row>
+
+      <!-- List block -->
       <v-flex xs12 sm6 offset-sm3>
         <v-toolbar color="cyan" dark>
           <v-toolbar-title>Audio Player by Anna</v-toolbar-title>
@@ -65,6 +67,11 @@
           <!-- найти трек -->
 
           <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+      </v-flex>
+
+      <!-- Audio tracks block -->
+      <v-flex xs12 sm6 offset-sm3>
+        <!-- TODO -->
       </v-flex>
     </v-layout>          
   </v-app>
